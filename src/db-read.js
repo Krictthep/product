@@ -8,16 +8,7 @@ export default function DBRead(){
     
     React.useEffect(()=>{
 
-       
-        //fetch('/api/db/read')
-    
-
-        fetch('https://server-480a.onrender.com/api/db/read', {
-            method: 'GET',        
-            mode: "cors",
-            credentials: "include",
-            headers: {'Content-Type':'application/json'}
-        })
+        fetch('https://server-480a.onrender.com/api/db/read')      
         .then(response => response != null ? response.json() : null)
         .then(result => {
            
