@@ -8,7 +8,7 @@ export default function DBCreate(){
         event.preventDefault()
         const fd = new FormData(form.current)
         const fe = Object.fromEntries(fd.entries())
-        fetch('https://server-480a.onrender.com/api/db/create', {
+        fetch('/api/db/create', {
             method: 'POST',
             body: JSON.stringify(fe),
             headers: {'Content-Type':'application/json'}
@@ -36,7 +36,7 @@ export default function DBCreate(){
             <label>วันที่เพิ่มสินค้า</label>
             <input type="date" name="date_added" required/><br/><br/>
             <button>ตกลง</button><br/><br/>
-            <a href="/db">หน้าหลัก</a>
+            <a href="/">หน้าหลัก</a>
         </form>
     )
 }
