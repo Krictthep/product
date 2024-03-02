@@ -4,8 +4,20 @@ import React from 'react'
 export default function DBRead(){
     let [data,setData] = React.useState('')
 
+
+    
     React.useEffect(()=>{
-        fetch('/api/db/read')
+
+       
+        //fetch('/api/db/read')
+    
+
+        fetch('/api/db/read', {
+            method: 'GET',        
+            mode: "cors",
+            credentials: "include",
+            headers: {'Content-Type':'application/json'}
+        })
         .then(response => response != null ? response.json() : null)
         .then(result => {
            
