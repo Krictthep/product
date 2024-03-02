@@ -11,7 +11,7 @@ export default function DBUpdate(){
     const detail = React.useRef()    
 
     React.useEffect(()=>{
-        fetch('/api/db/read')
+        fetch('https://server-480a.onrender.com/api/db/read')
         .then(response => response != null ? response.json() : null)
         .then(result => {
            
@@ -86,7 +86,7 @@ export default function DBUpdate(){
         const fd = new FormData(form.current)
         const fe = Object.fromEntries(fd.entries())
 
-        fetch('/api/db/update', {
+        fetch('https://server-480a.onrender.com/api/db/update', {
             method: 'POST',
             body: JSON.stringify(fe),
             headers: {'Content-Type': 'application/json'}
