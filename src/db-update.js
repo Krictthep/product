@@ -11,7 +11,7 @@ export default function DBUpdate(){
     const detail = React.useRef()    
 
     React.useEffect(()=>{
-        fetch('/api/db/read')
+        fetch('https://server-480a.onrender.com/api/db/read')
         .then(response => response != null ? response.json() : null)
         .then(result => {
            

@@ -8,7 +8,7 @@ export default function DBCreate(){
         event.preventDefault()
         const fd = new FormData(form.current)
         const fe = Object.fromEntries(fd.entries())
-        fetch('/api/db/create', {
+        fetch('https://server-480a.onrender.com/api/db/create', {
             method: 'POST',
             body: JSON.stringify(fe),
             headers: {'Content-Type':'application/json'}
