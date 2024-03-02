@@ -5,7 +5,7 @@ export default function DBRead(){
     let [data,setData] = React.useState('')
 
     React.useEffect(()=>{
-        fetch('https://server-480a.onrender.com/api/db/read')
+        fetch('/api/db/read')
         .then(response => response != null ? response.json() : null)
         .then(result => {
            
