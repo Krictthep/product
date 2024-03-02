@@ -12,7 +12,7 @@ export default function DBRead(){
         //fetch('/api/db/read')
     
 
-        fetch('/api/db/read', {
+        fetch('https://server-480a.onrender.com/api/db/read', {
             method: 'GET',        
             mode: "cors",
             credentials: "include",
