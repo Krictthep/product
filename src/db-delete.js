@@ -1,7 +1,7 @@
 /* eslin.disable react-hooks/exhaustive-deps */
 import React from "react";
 
-export default function DBUpdate() {
+export default function DBDelete() {
     let [data,setData] = React.useState('')
     const form = React.useRef()
 
