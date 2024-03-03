@@ -16,8 +16,8 @@ export default function DBNav() {
         <Link to="DBCreate">เพิ่มข้อมูล</Link>&nbsp;&nbsp;
         <Link to="DBRead">แสดงข้อมูล</Link>&nbsp;&nbsp;
         <Link to="DBUpdate">แก้ไขข้อมูล</Link>&nbsp;&nbsp;
-        {/* <Link to="DBDelete">ลบข้อมูล</Link>&nbsp;&nbsp;
-        <Link to="DBPaginate">แบ่งเพจ</Link>&nbsp;&nbsp;
+        <Link to="DBDelete">ลบข้อมูล</Link>&nbsp;&nbsp;
+        {/* <Link to="DBPaginate">แบ่งเพจ</Link>&nbsp;&nbsp;
         <Link to="DBSearch">Workshop: ค้นหาข้อมูล</Link>       */}
     </nav>
     <div className='content'>
