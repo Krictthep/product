@@ -27,15 +27,43 @@ export default function DBCreate(){
 
     return (
         <form id="form-create" onSubmit={onSubmitForm} ref={form}>
-            <label>ชื่อสินค้า</label>
-            <input type="text" name="name" required /><br/>
-            <label>ราคา</label>
-            <input type="number" name="price" min="0" required/><br/>
-            <label style={{float: 'left'}}>รายละเอียดสินค้า</label>
-            <textarea name="detail" cols="30" rows="3"></textarea><br/>
-            <label>วันที่เพิ่มสินค้า</label>
-            <input type="date" name="date_added" required/><br/><br/>
-            <button>ตกลง</button><br/><br/>
+              <div class="mb-3 row" style={{paddingTop: '20px'}}>
+                <label class="col-sm-2 col-form-label">ชื่อสินค้า</label>
+                <div class="col-sm-10">
+                <input type="text" name="name" required />
+                </div>     
+              </div>
+
+
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">ราคา</label>
+                <div class="col-sm-10">
+                <input type="number" name="price" min="0" required/>
+                </div>     
+              </div>
+      
+   
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">รายละเอียดสินค้า</label>
+                <div class="col-sm-10">
+                <textarea name="detail" cols="30" rows="3"></textarea>
+                </div>     
+              </div>
+          
+          
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">วันที่เพิ่มสินค้า</label>
+                <div class="col-sm-10">
+                <input type="date" name="date_added" required/>
+                </div>     
+              </div>
+          
+              <div class="mb-3 row">
+                <div class="col-sm-2"></div>
+                 <button class="col-sm-2 btn btn-primary">ตกลง</button>  
+              </div>
+     
+          <br/><br/>
             <a href="/">หน้าหลัก</a>
         </form>
     )

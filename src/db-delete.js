@@ -24,8 +24,9 @@ export default function DBDelete() {
     const showData = (result) => {
         let r = (
             <form onSubmit={onSubmitForm} ref={form}>
-            <table>
-                <tr>
+            <div style={{overflow: 'auto'}}>
+            <table style={{border: '1px', borderStyle: 'groove'}} class='table'>
+                <tr style={{backgroundColor: 'grey', borderStyle: 'solid'}}>
                     <th>ลบ</th><th>ชื่อสินค้า</th><th>ราคา</th>
                     <th>วันที่เพิ่มสินค้า</th><th>รายละเอียด</th>
                 </tr>
@@ -55,7 +56,8 @@ export default function DBDelete() {
                     })
                 }            
             </table>
-            <button>ลบรายการที่เลือก</button>
+            <button class="btn btn-primary">ลบรายการที่เลือก</button>
+            </div>
             </form>
         )
 

@@ -28,8 +28,9 @@ export default function DBUpdate(){
     const showData = (result) => {
         let r = (
             <form onSubmit={onSubmitForm} ref={form}>
-            <table>
-                <tr>
+            <div style={{overflow: 'auto'}}>
+            <table style={{border: '1px', borderStyle: 'groove'}} >
+                <tr style={{backgroundColor: 'grey', borderStyle: 'solid'}}>
                     <th>แก้ไข</th><th>ชื่อสินค้า</th><th>ราคา</th>
                     <th>วันที่เพิ่มสินค้า</th><th>รายละเอียด</th>
                 </tr>
@@ -59,7 +60,7 @@ export default function DBUpdate(){
                     })
                 }
                 <tr>
-                    <td><button>แก้ไข</button></td>
+                    <td><button class="btn btn-primary">แก้ไข</button></td>
                     <td><input type="text" name="name" ref={name} /></td>
                     <td><input type="number" name="price" ref={price} /></td>
                     <td><input type="date" name="date_added" ref={date_added} /></td>
@@ -69,6 +70,8 @@ export default function DBUpdate(){
 
                 </tr>
             </table>
+            </div>
+            
             <div>เลือกรายการที่จะแก้ไข แล้วใส่ข้อมูลใหม่ลงไป จากนั้นคลิกปุ่ม แก้ไข</div>
             </form>
         )

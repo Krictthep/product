@@ -24,10 +24,11 @@ export default function DBRead(){
 
     const showData = (result) => {
         let tb = (
-            <table>
-                <tr>
+            <div style={{overflow: 'auto', maxWidth: '100%'}}>
+            <table style={{border: '1px', borderStyle: 'groove', minWidth: '500px'}} class='table'>
+                <tr style={{backgroundColor: 'grey', borderStyle: 'solid'}}>
                     <th>ชื่อสินค้า</th><th>ราคา</th>
-                    <th>วันที่เพิ่มสินค้า</th><th>รายละเอียด</th>
+                    <th style={{width: '150px'}}>วันที่เพิ่มสินค้า</th><th>รายละเอียด</th>
                 </tr>
                 {
                     result.map(doc => {
@@ -38,16 +39,17 @@ export default function DBRead(){
                         let p = new Intl.NumberFormat().format(doc.price)
 
                         return (
-                            <tr>
+                            <tr > 
                                 <td>{doc.name}</td>
                                 <td>{p}</td>
-                                <td>{df}</td>
+                                <td style={{width: '150px'}}>{df}</td>
                                 <td>{doc.detail}</td>
                             </tr>
                         )
                     })
                 }
             </table>
+            </div>
         )
 
         setData(tb)
