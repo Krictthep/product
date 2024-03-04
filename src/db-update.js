@@ -17,11 +17,11 @@ export default function DBUpdate(){
     React.useEffect(()=>{
 
         setLoading(<img src={loadingGif} alt="loading..." />);
-        
+
         fetch('https://server-480a.onrender.com/api/db/read')
         .then(response => response != null ? response.json() : null)
         .then(result => {
-           
+           setLoading(<></>)
             if(result.length > 0){
                 showData(result)
             }
@@ -138,6 +138,7 @@ export default function DBUpdate(){
 
     return (
         <div style={{margin: '20px'}}>
+            <div class="col-lg-12" style={{textAlign: 'center'}}>{loading}</div>
             <div id="data">{data}</div>
             <a href="/">หน้าหลัก</a>
 

@@ -8,13 +8,13 @@ export default function DBRead(){
 
     
     React.useEffect(()=>{
-        
+
         setLoading(<img src={loadingGif} alt="loading..." />);
 
         fetch('https://server-480a.onrender.com/api/db/read')      
         .then(response => response != null ? response.json() : null)
         .then(result => {
-           
+           setLoading(<></>)
             if(result.length > 0){
                 showData(result)
             }
