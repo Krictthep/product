@@ -1,12 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
+import loadingGif from './loading.gif'
 
 export default function DBRead(){
     let [data,setData] = React.useState('')
-
+    let [loading,setLoading] = React.useState('')
 
     
     React.useEffect(()=>{
+        
+        setLoading(<img src={loadingGif} alt="loading..." />);
 
         fetch('https://server-480a.onrender.com/api/db/read')      
         .then(response => response != null ? response.json() : null)
@@ -57,6 +60,7 @@ export default function DBRead(){
 
     return (
         <div style={{margin: '20px'}}>
+            <div class="col-lg-12" style={{textAlign: 'center'}}>{loading}</div>
             <div id="data">{data}</div>
             <a href="/">หน้าหลัก</a>
 

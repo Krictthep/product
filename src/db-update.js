@@ -1,8 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
+import loadingGif from './loading.gif'
+
 
 export default function DBUpdate(){
     let [data,setData] = React.useState('')
+    let [loading,setLoading] = React.useState('')
+
 
     const form = React.useRef()
     const name = React.useRef()
@@ -11,6 +15,9 @@ export default function DBUpdate(){
     const detail = React.useRef()    
 
     React.useEffect(()=>{
+
+        setLoading(<img src={loadingGif} alt="loading..." />);
+        
         fetch('https://server-480a.onrender.com/api/db/read')
         .then(response => response != null ? response.json() : null)
         .then(result => {
