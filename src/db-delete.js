@@ -1,21 +1,27 @@
 /* eslin.disable react-hooks/exhaustive-deps */
 import React from "react";
+import loadingGif from './loading.gif'
 
 export default function DBDelete() {
     let [data,setData] = React.useState('')
+    let [loading,setLoading] = React.useState('')
     const form = React.useRef()
 
     React.useEffect(()=>{
+
+        setLoading(<img src={loadingGif} alt="loading..." />);
         fetch('https://server-480a.onrender.com/api/db/read')
         .then(response => response != null ? response.json() : null)
         .then(result => {
-           
+            setLoading(<></>)
             if(result.length > 0){
                 showData(result)
+                
             }
             else{
                 setData(<>ไม่มีรายการข้อมูล</>)
             }
+
         })
         .catch(err => alert(err))
     }, [])
@@ -24,7 +30,7 @@ export default function DBDelete() {
     const showData = (result) => {
         let r = (
             <form onSubmit={onSubmitForm} ref={form}>
-            <div style={{overflow: 'auto'}}>
+            <div style={{overflow: 'auto'}}>            
             <table style={{border: '1px', borderStyle: 'groove'}} class='table'>
                 <tr style={{backgroundColor: 'grey', borderStyle: 'solid'}}>
                     <th>ลบ</th><th>ชื่อสินค้า</th><th>ราคา</th>
@@ -81,7 +87,7 @@ export default function DBDelete() {
         }
 
         fetch('https://server-480a.onrender.com/api/db/delete', {
-            method: 'POST',
+            method: 'POST',                                         
             body: JSON.stringify(fe),
             headers: {'Content-Type': 'application/json'}
         })
@@ -105,6 +111,7 @@ export default function DBDelete() {
 
     return (
         <div style={{margin: '20px'}}>
+            <div class="col-lg-12" style={{textAlign: 'center'}}>{loading}</div>
             <div id="data">{data}</div><br/>
             <a href="/">หน้าหลัก</a>
         </div>
