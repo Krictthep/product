@@ -18,7 +18,7 @@ export default function DBUpdate(){
 
         setLoading(<img src={loadingGif} alt="loading..." />);
 
-        fetch('https://server-480a.onrender.com/api/db/read')
+        fetch('https://demo.designgoodweb.com/api/db/read')
         .then(response => response != null ? response.json() : null)
         .then(result => {
            setLoading(<></>)
@@ -96,7 +96,7 @@ export default function DBUpdate(){
         const fd = new FormData(form.current)
         const fe = Object.fromEntries(fd.entries())
 
-        fetch('https://server-480a.onrender.com/api/db/update', {
+        fetch('https://demo.designgoodweb.com/api/db/update', {
             method: 'POST',
             body: JSON.stringify(fe),
             headers: {'Content-Type': 'application/json'}

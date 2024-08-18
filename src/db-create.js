@@ -3,12 +3,12 @@ import React from 'react'
 
 export default function DBCreate(){
     const form = React.useRef()
-
+    //แบบเก่า https://server-480a.onrender.com/api/db/create
     const onSubmitForm = (event) => {
         event.preventDefault()
         const fd = new FormData(form.current)
         const fe = Object.fromEntries(fd.entries())
-        fetch('https://server-480a.onrender.com/api/db/create', {
+        fetch('https://demo.designgoodweb.com/api/db/create', {
             method: 'POST',
             body: JSON.stringify(fe),
             headers: {'Content-Type':'application/json'}

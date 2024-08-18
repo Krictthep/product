@@ -6,11 +6,15 @@ export default function DBDelete() {
     let [data,setData] = React.useState('')
     let [loading,setLoading] = React.useState('')
     const form = React.useRef()
+    
+    //แบบเก่า https://server-480a.onrender.com/api/db/read
+
+
 
     React.useEffect(()=>{
 
         setLoading(<img src={loadingGif} alt="loading..." />);
-        fetch('https://server-480a.onrender.com/api/db/read')
+        fetch('https://demo.designgoodweb.com/api/db/read')
         .then(response => response != null ? response.json() : null)
         .then(result => {
             setLoading(<></>)
@@ -86,7 +90,7 @@ export default function DBDelete() {
             return
         }
 
-        fetch('https://server-480a.onrender.com/api/db/delete', {
+        fetch('https://demo.designgoodweb.com/api/db/delete', {
             method: 'POST',                                         
             body: JSON.stringify(fe),
             headers: {'Content-Type': 'application/json'}

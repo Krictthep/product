@@ -11,7 +11,7 @@ export default function DBRead(){
 
         setLoading(<img src={loadingGif} alt="loading..." />);
 
-        fetch('https://server-480a.onrender.com/api/db/read')      
+        fetch('https://demo.designgoodweb.com/api/db/read')      
         .then(response => response != null ? response.json() : null)
         .then(result => {
            setLoading(<></>)
